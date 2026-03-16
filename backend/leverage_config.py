@@ -1,0 +1,8 @@
+LEVERAGE_SETTINGS = {
+    "YFIUSDT": 25,
+    "FARTCOINUSDT": 75,
+    "UNIUSDT": 50,
+    "ETCUSDT": 50,
+    "SEIUSDT": 50,
+    "APEUSDT": 50,
+}
