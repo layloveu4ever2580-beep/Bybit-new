@@ -3,8 +3,8 @@ import time
 import math
 from dotenv import load_dotenv
 from pybit.unified_trading import HTTP
-from .leverage_config import LEVERAGE_SETTINGS
-from .database import get_settings, insert_trade, update_trade, get_open_trades
+from leverage_config import LEVERAGE_SETTINGS
+from database import get_settings, insert_trade, update_trade, get_open_trades
 
 load_dotenv()
 
