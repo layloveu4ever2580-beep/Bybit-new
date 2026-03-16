@@ -10,8 +10,19 @@ from leverage_config import LEVERAGE_SETTINGS
 
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../frontend/dist', static_url_path='')
 CORS(app)
+
+# Serve React App
+@app.route('/')
+def serve_frontend():
+    return app.send_static_file('index.html')
+
+@app.errorhandler(404)
+def not_found(e):
+    if request.path.startswith('/api/') or request.path.startswith('/webhook'):
+        return jsonify({"status": "error", "message": "Not found"}), 404
+    return app.send_static_file('index.html')
 
 # Initialize database
 database.init_db()
